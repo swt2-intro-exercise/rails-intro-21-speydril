@@ -10,4 +10,5 @@ describe "Author Edit" , type: :feature do
         @alan.reload
         expect(@alan.last_name).to eq("Heisen")
       end 
+    
 end 
