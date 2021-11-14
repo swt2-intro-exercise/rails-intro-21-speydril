@@ -28,5 +28,12 @@ describe "New author page", type: :feature do
     author = Author.new(last_name:"")
     expect(author).to_not be_valid
   end
+
+  it "should show errors to user" do
+    visit new_author_path
+
+    find('input[type="submit"]').click
+    expect(page).to have_text("error")
+  end
   
 end
