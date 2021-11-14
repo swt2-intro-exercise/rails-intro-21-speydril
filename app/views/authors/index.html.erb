@@ -13,7 +13,7 @@
       <td><%= author.homepage %></td>
       <td><%= link_to 'Show', author_path(author) %></td>
       <td><%= link_to 'Edit', edit_author_path(author) %></td>
-      <td><%= link_to 'Destroy', authors_path(author), method: :delete, data: {confirm: "are you sure?"} %></td>
+      <td><%= link_to 'Delete', author_path(author), method: :delete, data: {confirm: "are you sure?"} %></td>
     </tr>
   <% end %>
 </table>
