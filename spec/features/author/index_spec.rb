@@ -9,4 +9,13 @@ describe "index" , type: :feature do
         expect(page).to have_text("Alan Turing")
         expect(page).to have_link "New", href: new_author_path
     end 
+    it "should delete entry and decrease count" do
+        @alan = FactoryBot.create :author
+        visit authors_url
+        counter = Author.count
+
+        @alan.destroy 
+
+        expect(counter).to_not eq(Author.count)
+    end
 end 
