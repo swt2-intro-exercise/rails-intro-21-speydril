@@ -15,10 +15,13 @@ describe "New author page", type: :feature do
 
   it "submit should make an entry in database" do 
     visit new_author_path
-    fill_in("firstname", with:"Alan")
-    fill_in("lastname", with:"Turing")
-    fill_in("homepage", with:"http://wikipedia.org/Alan_Turing")
+
+    page.fill_in "author[first_name]", with:"Alan"
+    page.fill_in "author[last_name]", with:"Turing"
+    page.fill_in "author[homepage]", with:"http://wikipedia.org/Alan_Turing"
     find('input[type="submit"]').click
+
+    expect(Author.where(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turing").blank?).to be == false
   end 
   
 end
