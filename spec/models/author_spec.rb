@@ -11,6 +11,8 @@ describe 'Author model', type: :model do
 
     it "should have name method which return first and last name" do
       author = Author.new(first_name: "Alan", last_name:"Turing", homepage:"http://wikipedia.org/Alan_Turing")
-      expect(author.name()).to eq("Alan Turing") 
+      expect(author.name).to eq("Alan Turing") 
     end
+
+
 end
