@@ -10,7 +10,7 @@ describe 'Paper model', type: :model do
     end
 
     it "should have an empty list of authors"  do
-      @paper = FactoryBot.create :paper
+      @paper = Paper.new
       expect(@paper.authors).to be_empty
     end
 
