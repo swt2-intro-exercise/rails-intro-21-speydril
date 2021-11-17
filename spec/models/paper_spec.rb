@@ -9,6 +9,17 @@ describe 'Paper model', type: :model do
       expect(paper.year).to eq(2)
     end
 
-    
+    it "should have an empty list of authors"  do
+      @paper = FactoryBot.create :paper
+      expect(@paper.authors).to be_empty
+    end
+
+    it "should invalidate new papers without one attribute set" do 
+      paper = Paper.new(title:"")
+      paper2 = Paper.new(year:"91")
+      expect(paper).to_not be_valid
+      expect(paper2).to_not be_valid
+    end
+  
 
 end
